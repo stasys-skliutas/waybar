@@ -1,0 +1,104 @@
+// https://github.com/Alexays/Waybar/wiki/Configuration
+{
+  "position": "top",
+  "width": 1920,
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "clock",
+    "hyprland/language"
+  ],
+  "modules-right": [
+    "cpu",
+    "memory",
+    "pulseaudio",
+    "network",
+    "tray"
+  ],
+
+  // https://github.com/Alexays/Waybar/wiki/Module:-Hyprland#workspaces
+  "hyprland/workspaces": {
+    "format": "{name}: {icon}",
+    "format-icons": {
+      "1": "", // browser
+      "2": "", // main dev workspace
+      "3": "", // auxiliary dev workspace
+      "4": "", // terminals, usually ssh to remote servers
+      "5": "", // music, podcasts
+      "6": "", // social stuff, slack, teams, fb, ...
+      "active": "",
+      "default": ""
+    },
+    "persistent-workspaces": {
+      "*": 6 // 6 workspaces by default on every monitor
+    }
+  },
+  // https://github.com/Alexays/Waybar/wiki/Module:-Clock
+  "clock": {
+    "format": "{:%H:%M     %Y-%m-%d (%A)} <?> ",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "on-click-right": "mode",
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-click-forward": "tz_up",
+      "on-click-backward": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+  },
+  // https://github.com/Alexays/Waybar/wiki/Module:-Network
+  "network": {
+    "format-wifi": "{essid} ({signalStrength}%)  ",
+    "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+    "format-disconnected": "Disconnected ⚠"
+  },
+  // https://github.com/Alexays/Waybar/wiki/Module:-CPU
+  "cpu": {
+    "format": "{usage}% "
+  },
+  // https://github.com/Alexays/Waybar/wiki/Module:-Memory
+  "memory": {
+    "format": "{}% "
+  },
+  // https://github.com/Alexays/Waybar/wiki/Module:-PulseAudio
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-bluetooth": "{volume}% {icon}",
+    "format-muted": "",
+    "format-icons": {
+      "headphones": "",
+      "handsfree": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        ""
+      ]
+    },
+    "on-click": "pavucontrol"
+  },
+  // https://github.com/Alexays/Waybar/wiki/Module:-Tray
+  "tray": {
+    "spacing": 10
+  },
+  // https://github.com/Alexays/Waybar/wiki/Module:-Hyprland#language
+  "hyprland/language": {
+    "format": "  {}",
+  }
+}

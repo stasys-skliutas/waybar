@@ -1,0 +1,48 @@
+* {
+    color: #f7f9fc;
+}
+
+tooltip {
+    background-color: rgba(5, 32, 69, 0.95);
+}
+
+
+window#waybar {
+    background: rgba(0, 0, 0, 0);
+}
+
+.modules-left, .modules-right, .modules-center {
+    margin-top: 4px;
+    background-color: rgba(5, 32, 69, 0.7);
+    border-radius: 8px;
+}
+
+.modules-left, .modules-right {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.modules-left {
+    margin-left: 4px;
+}
+
+.modules-center {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.modules-right {
+    margin-right: 4px;
+}
+
+#workspaces button:hover {
+    background: #7385a0;
+}
+
+#clock, #cpu, #memory, #network, #pulseaudio, #tray {
+    margin-right: 16px;
+}
+
+#clock {
+    background: rgba(5, 32, 69, 0.7);
+}
